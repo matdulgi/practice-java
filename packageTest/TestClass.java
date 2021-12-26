@@ -1,3 +1,5 @@
+package packageTest;
+
 import testpkg.TestClass2;
 
 public class TestClass{
