@@ -8,10 +8,14 @@ public class ConsturctorTest {
         *
         * theme 2 : works on super methods declaration omitted
         *
-        * conclusion 1 : to call parent class's  argument constructor, it needs to call super method that has same argument format
+        * conclusion 1 : to call parent class's  argument constructor(parameterized constructor), it needs to call super method that has same argument format
         *
-        * theme 3 :
+        * theme 3 : will construct be inherited
         * to create children class with argument, children class must has it's own artument constructor
+        * note : Constructors are not inherited!
+        *
+        * theme 4 : prevent default constructor
+        * to allow only argument constructor, must do not declare or set to private the non argument constructor
         *
         * remains
         */
@@ -30,6 +34,7 @@ public class ConsturctorTest {
 //        Children3 children3_arg = new Children3(new Object());
 
 
+        Parent2 parent2 = new Parent2(new Object());
     }
 }
 
@@ -51,16 +56,6 @@ class Children1 extends Parent1{
     }
 }
 
-
-class Parent2{
-    public Parent2(){
-        System.out.println("called Parent's consturctor - non arg");
-    }
-    public Parent2(Object obj){
-        System.out.println("called Parent's consturctor - obj");
-    }
-}
-
 class Children2 extends Parent1{
     public Children2(){
         System.out.println("called Children's consturctor - non arg");
@@ -71,6 +66,22 @@ class Children2 extends Parent1{
     }
 }
 
-
 class Children3 extends Parent1{
+}
+
+class Parent2{
+    private Parent2(){
+        System.out.println("called Parent's consturctor - non arg");
+    }
+    public Parent2(Object obj){
+        System.out.println("called Parent's consturctor - obj");
+    }
+}
+
+class Children4 extends Parent2{
+    public Children4(Object obj){
+        super(obj);
+
+    }
+
 }
