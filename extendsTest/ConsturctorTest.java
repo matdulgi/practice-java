@@ -8,7 +8,11 @@ public class ConsturctorTest {
         *
         * theme 2 : works on super methods declaration omitted
         *
-        * conclusion : to call parent class's  argument constructor, it needs to call super method that has same argument format
+        * conclusion 1 : to call parent class's  argument constructor, it needs to call super method that has same argument format
+        *
+        * theme 3 :
+        * to create children class with argument, children class must has it's own artument constructor
+        *
         * remains
         */
         //no arg
@@ -17,8 +21,14 @@ public class ConsturctorTest {
         System.out.println(" - start to create new Children class with no arg");
         Children1 children1_arg = new Children1(new Object());
         // with no super method that has argument declaration, parent's default constructor has called
+
         System.out.println(" - start to create new Children class with no arg");
         Children2 children2_arg = new Children2(new Object());
+
+        System.out.println(" - start to create new Children class that has no argument constructor");
+        Children3 children3 = new Children3();
+//        Children3 children3_arg = new Children3(new Object());
+
 
     }
 }
@@ -59,4 +69,8 @@ class Children2 extends Parent1{
         super(obj);
         System.out.println("called Childrun's consturctor - obj");
     }
+}
+
+
+class Children3 extends Parent1{
 }
