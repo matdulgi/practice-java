@@ -12,6 +12,9 @@ public class InheritanceTest{
 		parent.test();
 		child.test();
 
+		// type of inherited class
+		System.out.println(parent.getClass());
+		// type of Parent for var converted to children's type
 	}
 }
 

@@ -36,12 +36,6 @@ public class GenericTypeTest {
 		// String str = list3.get(0);
 		// 꺼내서 사용은 안된다
 		
-		
-		
-		
-		
-		
-		
 		// ㅇ결론
 		// 컬렉션은 일반적으로 Object 타입의 객체를 저장한다.
 		// 즉 List 는 List<Object>와 같은 말이라는 뜻이다
