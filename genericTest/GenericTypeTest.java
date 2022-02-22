@@ -27,7 +27,7 @@ public class GenericTypeTest {
          * ###
          */
 
-        System.out.println("generic class test");
+        System.out.println("------------ generic class test ------------");
         TestGenericClass<String> testGenericClass = new TestGenericClass<>(String.class);
         Class clazz1 = testGenericClass.getClass();
         Type[] types = testGenericClass.getClass().getGenericInterfaces();
@@ -35,7 +35,8 @@ public class GenericTypeTest {
             System.out.println(type);
         }
         for (Type type : clazz1.getGenericInterfaces()){
-            System.out.println("genericInterface : " + type.getTypeName());
+            System.out.println("test : genericInterface");
+            System.out.println(" - " + type.getTypeName());
         }
         for (TypeVariable typeVariable : clazz1.getTypeParameters()){
             System.out.println("typeParameters : " + typeVariable);
