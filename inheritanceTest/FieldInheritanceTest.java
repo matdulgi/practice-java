@@ -14,12 +14,17 @@ public class FieldInheritanceTest {
 
 
     public static void main(String[] args) {
+        /**
+         * children into parent
+         */
         Parent parent = new Children();
+        System.out.println(parent.field);
+        parent.showInfo();
+
+
+
         Children children = (Children)parent;
 
-        System.out.println(parent.field);
-        System.out.println(children.field);
-        System.out.println(children.getField());
 
         System.out.println("------");
         parent.setField(3);
@@ -27,11 +32,8 @@ public class FieldInheritanceTest {
         System.out.println(children.field);
         System.out.println(children.getField());
 
-
-
-
-
     }
+
     static class Parent {
         public int field = 1;
 
@@ -42,16 +44,23 @@ public class FieldInheritanceTest {
         public void setField(int field) {
             this.field = field;
         }
+        public void showInfo(){
+
+            System.out.println("it's parent");
+        }
     }
 
     static class Children extends Parent{
-//        public int field = 2;
+        public int field = 2;
         Children (){
 //         super.field = field;
         }
 
         public int getField(){
             return super.field;
+        }
+        public void showInfo(){
+            System.out.println("it's children");
         }
     }
 
