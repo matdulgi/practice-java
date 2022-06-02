@@ -8,12 +8,17 @@ import java.sql.Statement;
 
 public class BulkInsertPerformance {
     public static void main(String[] args) {
-        int loop = 10;
+        int loop = 1000;
         Test test = new Test();
-        test.testPerformance0(loop);
-        test.testPerformance1(loop);
+//        test.testPerformance0(loop);
+        //
+//        test.testPerformance1(loop);
+
+//        insert everytime
         test.testPerformance2(loop);
+//        mysql bulk insert
         test.testPerformance3(loop);
+//        jdbc batch insert
         test.testPerformance4(loop);
     }
 
